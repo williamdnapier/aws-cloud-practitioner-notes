@@ -46,4 +46,171 @@
 
 ### AWS Acceptable Use Policy describes the prohibited uses of AWS
 
+### Identity and Access Management (IAM)
+Keep the root user secret and only login as needed. Secure with MFA.
+
+Here are the AWS tasks that require a root user to do things:
+[https://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html](https://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html)
+
+### IAM Users
+1. An IAM user is an entity that represents a person or service
+2. Can be assigned:
+    1. An access key ID and secret access key for programmatic access to the AWS API, SDK and other development tools
+    2. A password for access to the management console
+3. By default, users cannot access anything in the account
+4. The account root user credentials are the email address used to create the account and password
+5. The root account has full administrative permissions and these cannot be restricted
+6. Best practices for root accounts:
+    1. Don't use the root user credentials
+    2. Don't share the root user credentials
+    3. Create an IAM user and assign administrative permissions as required
+    4. Enable Multi-Factor Authentication (MFA)
+7. IAM users can be created to represent applications and these are known as service accounts
+8. You can have 5,000 users per AWS account
+9. Each user account has a friendly name and an Amazon Resource Name (ARN) which uniquely identifies the user across AWS
+10. You should create individual IAM accounts for users. It is a best practice to *not* share accounts.
+11. A password policy can be defined for enforcing password length, complexity, etc. (applies to all users)
+
+### IAM Groups
+1. Groups are collections of users and have policies attached to them
+2. A group is *not* an identity and cannot be identified as a principal in an IAM policy
+3. Use groups to assign permissions to users
+4. Use the principal of least priviledge when assigning permissions
+5. You cannot nest groups within groups
+
+### IAM Roles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
