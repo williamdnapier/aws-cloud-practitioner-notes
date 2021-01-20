@@ -1,6 +1,6 @@
 # [AWS Certified Cloud Practitioner Exam](https://aws.amazon.com/certification/certified-cloud-practitioner/)
 
-## The AWS Certified Cloud Practitioner examination is intended for individuals who have the knowledge and skills necessary to effectively demonstrate an overall understanding of the AWS Cloud, independent of specific technical roles addressed by other AWS Certifications. The exam can be taken at a testing center or from the comfort and convenience of a home or office location as an online proctored exam.
+## Brief Notes for AWS CPP
 
 ### 6 Advantages of Cloud Computing
 1. Trade capital expense for variable expense
@@ -79,138 +79,76 @@ Here are the AWS tasks that require a root user to do things:
 5. You cannot nest groups within groups
 
 ### IAM Roles
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+1. Roles are created and then assumed by trusted entities and define a set of permissions for making AWS service requests
+2. With IAM Roles you can delegate permissions to resources for users and services without using permanent credentials
+3. IAM users or AWS services can assume a role to obtain temporary security credentials that can be used to make AWS API calls
+4. You can delegate using roles
+5. There are no credentials associated with a role (password or access keys)
+
+### IAM Policies
+1. Policies are documents that define permissions and can be applied to users, groups and roles
+2. Policy documents are written in JSON (key - value pair document that consists of attributes and values)
+3. All permissions are denied by default
+4. The most restrictive policy is used if multiple policies applied
+5. The IAM policy simulator helps you to test and validate policies
+6. The condition element can be used to apply further conditional logic
+
+### 3 Authentication 
+1. Access key ID + secret access key for programmatic access --> API <-- (MFA can be added to API operations)
+2. IAM user + password --> AWS Management Console <-- (MFA can be added)
+3. Signing Certificate --> Some AWS service
+
+### IAM Access Keys
+1. A combination of access key and secret access key
+2. Used to make programmatic calls to AWS with the API
+3. You can create, modify, view or rotate access keys
+4. When created you get the access key and secret key
+5. Secret key is only returned at creation time and a new key must be created
+6. Ensure access keys and secret access keys stored securely
+7. Users can be given access to change their own keys through IAM policy (not through the console)
+8. You can disable a user access key which prevents it from being used for API calls
+
+### IAM Console Password
+1. A password that the user can enter to sign into interactive sessions such as the AWS Management Console
+2. You can allow users to change their passwords
+3. You can allow selected IAM users to change their passwords by disabling the option for all users and using and IAM policy to grant permissions for selected users
+
+### IAM Server Certificate/Signing Certificate (SSL certificate)
+1. SSL/TLS certificates that you can use to authenticate with some AWS services
+2. AWS recommends that you use the AWS Certificate Manager (ACM) to provision, manage and deploy your server certificates
+3. Use IAM only when you must support HTTPS connections in a region that is not supported by ACM
+
+### Multi-Factor Authentication in AWS
+1. Something you know (IAM username & password)
+2. Something you have (Google authenticator on phone, physical MFA usb stick)
+
+### AWS Security Token Service (STS)
+1. The AWS Security Token Service (STS) is a web service that enables you to request temporary, limited-privilege credentials for IAM users or for users that you authenticate (federated users)
+
+### IAM Best Practices
+1. Lock away the AWS root user access keys
+2. Create individual IAM users
+3. Use AWS defined policies to assign permissions whenever possible
+4. Use groups to assign permissions to IAM users
+5. Grant least privilege
+6. Use access levels to review IAM permissions
+7. Configure a strong password policy for users
+8. Enable MFA
+9. Use roles for applications that run on AWS EC2 instances
+10. Delegate by using roles instead of sharing credentials
+11. Rotate credentials regularly
+12. Remove unnecessary credentials
+13. Use policy conditions for extra security
+14. Monitor activity in your AWS account
+
+### Amazon EC2
+1. Amazon Elastic Compute Cloud (Amazon EC2) is a web service in the AWS Compute suite of products that provides secure, resizable compute capacity in the cloud.
+2. Elastic Web-Scale computing - you can increase or decrease capacity within minutes and commission 1 to thousands of instances at the same time.
+3. Completely controlled - you have complete control to include root access to each instance and can stop and start instances w/o losing data and using web service APIs.
+4. Flexible Cloud Hosting Services - you can choose from multiple instance types, operating systems, and software packages as well as instances with varying memory, CPU and storage configurations.
+5. You select an instance family and type depending on your application requirements - this determines the amount of CPU, RAM, disk, and network throughput your instance has.
+
+### Amazon Machine Image (AMI)
+1. An Amazon Machine Image (AMI) provides the information required to launch an instance.
+2. An AMI includes the following:
+	- One or more EBS snapshots, or, for instance-store-backed AMIs, a template for the root volume of the instance (for example, an operating system, an application server, and applications).
