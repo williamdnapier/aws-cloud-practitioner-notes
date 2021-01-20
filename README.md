@@ -152,3 +152,10 @@ Here are the AWS tasks that require a root user to do things:
 1. An Amazon Machine Image (AMI) provides the information required to launch an instance.
 2. An AMI includes the following:
 	- One or more EBS snapshots, or, for instance-store-backed AMIs, a template for the root volume of the instance (for example, an operating system, an application server, and applications).
+	- Launch permissions that control which AWS accounts can use the AMI to launch instances
+	- A block device mapping that specifies the volumes to attach to the instance when it's launched
+	
+### 3 Types of AMIs
+1. Community AMIs - free to use. You just select the OS you want to use
+2. AWS Marketplace AMIs. Typically come with some 3rd party software and involve licensing fees
+3. My AMIs - AMIs you create and use yourself
