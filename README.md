@@ -159,3 +159,80 @@ Here are the AWS tasks that require a root user to do things:
 1. Community AMIs - free to use. You just select the OS you want to use
 2. AWS Marketplace AMIs. Typically come with some 3rd party software and involve licensing fees
 3. My AMIs - AMIs you create and use yourself
+
+### User Data
+1. User data is data that is supplied by the user at instance launch time in the form of a script
+2. Typically, a series of commands that you can run. For example, `yum update` or `yum upgrade` etc. (Yum update is better to use.)
+3. Limited to 16KB. So, it can't be too much.
+4. It is not encrypted
+
+### Metadata
+1. Instance meta data is data about your instances that you can use to configure or manage the running instance
+2. For example, IP address, ID of instance, Availability Zone where located, etc.
+3. Instance meta data is availabe at http://169.254.169.254/latest/meta-data (local ip)
+4. The Instance Metadata Query tool allows you to query the instance metadata without having to type out the full URI or category names
+
+### Amazon ECS (Amazon Elastic Container Service)
+1. Amazon Elastic Container Service (ECS) provides highly scalable, high performance container management service that supports Docker containers
+2. A container is similar to a virtual instance but there is much less to manage (You don't manage the OS of the container, just collection of programs.)
+3. With containers - the code, runtime, system tools, system libraries and settings are all packaged up together. Everything is packaged into the image.
+4. Containers run quickly and reliably from one computing environment to another
+5. Amazon ECS eliminates the need for you to install, operate and scale your own cluster management infrastructure
+
+### Amazon ECS Launch Types
+1. An Amazon ECS launch type determines the type of instance of infrastructure on which your tasks and services are hosted
+2. There are 2 main launch types
+
+### 2 Different ECS Launch Types
+1. Amazon EC2
+    1. You explicitly provision EC2 instances
+	2. You are responsible for upgrading, patching and care of the EC2 instance pool
+	3. You must handle cluster optimization
+	4. More granular control over infrastructure
+	
+2. Amazon Fargate
+    1. The control plane asks for resources and Fargate auto provisions resources
+	2. Fargate provisions compute as needed
+	3. Fargate handles cluster optimization
+	4. You have limited manual control because the infrastructure is automated by Fargate
+	
+### AWS Lambda
+1. AWS Lambda is a serverless computing technology that allows you to run code without provisioning or managing servers
+2. You literally just put your code into AWS Lambda; not on a server you manage
+3. You pay nothing for the code until it executes. Then, you only pay for execute time itself.
+4. AWS Lambda scalses automatically depending on the amount of resources required
+
+### Benefits of AWS Lambda
+1. No servers to manage
+2. Continuous scaling
+3. Subsecond metering
+4. Integrates with almost all other AWS services
+
+### Amazon LightSail
+1. Amazon Lightsail is great for users who do *not* have deep AWS technical expertise as it makes it very easy to provision compute services
+2. Amazon Lightsail provides developers compute, storage, and networking capacity and capabilities to deploy and manage websites, web applications, and databases in the cloud
+3. Amazon Lightsail includes everything you need to launch your project quickly -- a virtual machine, SSD-based storage, data transfer, DNS management and a static IP
+4. Amazon Lightsail provides preconfigured virtual private servers that include everything you need to deploy applications and create a database
+
+### Comparisons of EC2, ECS (EC2 Launch Type), ECS (Fargate Launch Type) and Lambda
+1. EC2
+    1. EC2
+	    1. You manage the operating system
+		2. Scale vertically - more CPU/Mem/HDD or scale horizontally (automatic) with auto scaling
+		3. Use for traditional applications and long running tasks
+		4. Pay for instance runtime based on family/type
+2. ECS (EC2 Launch Type)
+    1. You manage container instance (EC2) and the containers (tasks)
+	2. Manually add container instances or use ECS Services and EC2 Auto Scaling
+	3. Use for microservices and batch use cases where you need containers and need to retain management of underlying platform
+	4. Pay for instances runtime based on family/type
+3. ECS (Fargate Launch Type)
+    1. You manage the containers (tasks)
+	2. AWS scales the cluster automatically
+	3. Use for microservices and batch use cases
+	4. Pay for container run time based on allocated resources
+4. Lambda
+    1. You manage the code
+	2. Lambda automatically scales concurrent executions up to default limit (1,000)
+	3. Use for ETL, infrastructure automation, data validation, mobile backends
+	4. Pay only for execution time based on memory allocation
