@@ -236,3 +236,44 @@ Here are the AWS tasks that require a root user to do things:
 	2. Lambda automatically scales concurrent executions up to default limit (1,000)
 	3. Use for ETL, infrastructure automation, data validation, mobile backends
 	4. Pay only for execution time based on memory allocation
+	
+### Amazon Simple Storage Service (S3)
+1. Amazon S3 is object storage built to store and retrieve any amount of data from anywhere -- websites, mobile apps, corporate apps, data from IOT sensors, etc.
+2. Any type of file can be stored in S3
+3. S3 is designed to deliver 99.99999999999% (11 9s after decimal lol) durability
+4. Typical use cases:
+    1. Backup and Storage - Provide data backup and storage for other services
+    2. Application Hosting - Provide services that deploy, install and manage web apps
+    3. Media Hosting - Build a redundant, scalable, and HA infrastructure that hosts video, photo and/or music
+    4. Software Delivery - Host your software apps that customers can download
+    5. Static Website - you can configure and S3 bucket to serve up static website files (not dynamic)
+
+### Amazon S3
+1. Files are stored in buckets
+2. Buckets are root level folders
+3. Files can be anywhere from 0 bytes to 5TB
+4. There is unlimited storage available
+5. S3 uses a universal namespace. So, bucket names and URLs must be unique globally
+6. However, you actually specify that the bucket actually be created in a certain region (Northern VA, Ohio, etc.)
+7. Best practice is to create buckets closest region to your users to reduce latency
+8. Objects consist of:
+    1. Key (the name of the object)
+    2. Value (data or a sequence of bytes)
+    3. Version ID (used for versioning)
+    4. Metadata (information about the stored data file)
+    
+### Amazon S3 Pricing
+1. Storage
+2. Requests
+3. Storage management pricing
+4. Data transfer pricing
+5. Transfer acceleration pricing is extra
+
+### Amazon S3 - 6 S3 Storage classes
+1. S3 Standard - durable, immediately available, frequently accessed
+2. S3 Intelligent-Tiering - automatically moves data to the most cost-effective tier
+3. S3 Standard-IA - durable, immediately available, infrequently accessed
+4. S3 One Zone-IA - lower cost for infrequently accessed data with less resilience
+5. S3 Glacier - archived data, retrieval times in minutes or hours
+6. S3 Glacier Deep Archive - lowest cost storage class for long term retention
+
