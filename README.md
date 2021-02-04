@@ -320,3 +320,42 @@ Here are the AWS tasks that require a root user to do things:
 3. Associated with a private IP address on the instance
 4. Can be moved between instances and Elastic Network Adapters
 
+When you need to place an EC2 instance in a private subnet but provide access to the internet, you can use either NAT instance or NAT gateway. For most cases, you would use a NAT gateway instead of NAT instance because it auto-managed by AWS.
+
+### NAT Instance (Network Address Translation)
+1. Managed by you (e.g. software updates)
+2. Scale up instance type manually and used enhanced networking
+3. No high availability - scripted/auto-scaled HA possible using multiple NATs in multiple subnets
+4. Need to assign Security Group
+5. Can use as a bastion host
+6. Use an Elastic IP address or a public IP address with a NAT instance
+7. Can implement port forwarding through manual customization
+
+### NAT (Network Address Translation) Gateway
+1. Managed by AWS
+2. Elastic scalability up to 45 Gbps
+3. Provides automatic high availability within an AZ and can be placed in multiple AZs
+4. No Security Groups
+5. Cannot access through SSH
+6. Choose the Elastic IP address to associate with a NAT gateway at creation
+7. Does not support port forwarding
+
+### Options for securely connecting to a VPC
+1. AWS managed VPN - fast to setup (uses the public internet, in terms of performance not too reliable)
+2. AWS Direct Connect - high bandwidth, low-latency, very reliable but takes weeks to months to setup
+3. VPN CloudHub - used for connecting multiple sites to AWS
+4. Software VPN - use 3rd party software
+
+### AWS Direct Connect
+1. AWS Direct Connect is a network service that provides an alternative to using the Internet to connect to a customer's on prem sites to AWS
+2. Can be used to create a hybrid cloud where some resources are on-prem and some in cloud
+3. Data is transmitted through a private network connection between AWS and a customer's datacenter or corporate network
+4. Benefits
+    1. Reduce cost when using large volumes of traffic
+    2. Increase relability (predictible performance)
+    3. Increase bandwidth (predicible bandwidth)
+    4. Decrease latency
+5. Direct connect is charged by the port hours and data transferred
+6. Available in 1Gbps and 10Gbps
+7. Or, if you choose an AWS Direct Connect Partner, you can choose speeds of 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps
+
