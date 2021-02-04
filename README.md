@@ -277,6 +277,46 @@ Here are the AWS tasks that require a root user to do things:
 5. S3 Glacier - archived data, retrieval times in minutes or hours
 6. S3 Glacier Deep Archive - lowest cost storage class for long term retention
 
+### Amazon Virtual Private Cloud (VPC)
+1. Virtual Private Cloud - A virtual private cloud (VPC) is a virtual network dedicated to your AWS account
+2. Analogous to having your own data center (DC) in AWS
+3. It is logically isolated from other virtual networks in the AWS Cloud
+4. Provides complete control over the virtual networking environment including selection of IP ranges, creation of subnets, and configuration of route tables and gateways
+5. You can launch your AWS resources, such as Amazon EC2 instances, into your VPC
+6. When you create a VPC, you must specify a range of IPv4 addresses for the VPC in the form of a Classless Inter-Domain Routing (CIDR) block. Example: 10.0.0.0/16
+7. A VPC spans all availability zones (AZs) in the region
+8. You have full control over who has access to the AWS resources inside your VPC
+9. By default, you can create up to 5 VPCs per region
+10. A default VPC is created in each region with a subnet in each AZ
 
-### Test Edit
+### Security Groups
+1. Operates at the instance (interface) level
+2. Support allow rules only
+3. Stateful
+4. Evaluates all rules
+5. Applies to an instance only if associated with a group
+
+### Network Access Control List (ACL)
+1. Operates at the subnet level
+2. Supports allow and deny rules
+3. Stateless
+4. Processes rules in order
+5. Automatically applies to all instances in the subnets it is associated with
+
+### Public IP Address
+1. Lost when the instance is stopped
+2. Used in Public subnets
+3. No charge
+4. Associated with a private IP address on the instance
+5. Cannot be moved between instances
+
+### Private IP Address
+1. Retained when the instance is stopped
+2. Used in Public and Private subnets
+
+### Elastic IP Address
+1. Static Public IP address - used when you need to retain a public IP
+2. You are charged if not used
+3. Associated with a private IP address on the instance
+4. Can be moved between instances and Elastic Network Adapters
 
