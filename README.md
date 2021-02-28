@@ -359,3 +359,38 @@ When you need to place an EC2 instance in a private subnet but provide access to
 6. Available in 1Gbps and 10Gbps
 7. Or, if you choose an AWS Direct Connect Partner, you can choose speeds of 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps
 
+### Databases - Relational vs Non-Relational
+1. Relational
+    1. Organized by tables, rows and columns
+    2. Rigid schema (SQL)
+    3. Rules enforced within a database
+    4. Typically scaled vertically
+    5. Supports complex queries and joins
+    6. Amazon RDS, Oracle, MySQL, IBM DB2, PostgresSQL
+2. Non-Relational
+    1. Varied data storage models
+    2. Flexible schema (NoSQL) - data stored in key-value pairs, columns, documents or graphs
+    3. Rules can be defined in application code (outside database)
+    4. Scales horizontally
+    5. Unstructured, simple language that supports any kind of schema
+    6. Amazon DynamoDB, MongoDB, Redis, Neo4j
+
+### Data Store and Use Case
+1. Database on EC2
+    1. Need full control over instance and database
+    2. 3rd party database engine (not available in RDS)
+2. Amazon RDS
+    1. Need traditional relational database
+    2. e.g. Oracle, PostgresSQL, Microsoft SQL, MariaDB
+    3. Data is well-formed and structured
+3. Amazon DynamoDB
+    1. NoSQL database
+    2. In-memory performance
+    3. High I/O needs
+    4. Dynamic scaling
+4. Amazon RedShift
+    1. Data warehouse for large volumes of aggregated data
+5. Amazon ElastiCache
+    1. Fast temporary storage for small amounts of data
+7. 
+
