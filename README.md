@@ -352,8 +352,8 @@ When you need to place an EC2 instance in a private subnet but provide access to
 3. Data is transmitted through a private network connection between AWS and a customer's datacenter or corporate network
 4. Benefits
     1. Reduce cost when using large volumes of traffic
-    2. Increase relability (predictible performance)
-    3. Increase bandwidth (predicible bandwidth)
+    2. Increase reliability (predictable performance)
+    3. Increase bandwidth (predictable bandwidth)
     4. Decrease latency
 5. Direct connect is charged by the port hours and data transferred
 6. Available in 1Gbps and 10Gbps
@@ -364,7 +364,7 @@ When you need to place an EC2 instance in a private subnet but provide access to
     1. Organized by tables, rows and columns
     2. Rigid schema (SQL)
     3. Rules enforced within a database
-    4. Typically scaled vertically
+    4. Typically, scaled vertically
     5. Supports complex queries and joins
     6. Amazon RDS, Oracle, MySQL, IBM DB2, PostgresSQL
 2. Non-Relational
@@ -392,5 +392,59 @@ When you need to place an EC2 instance in a private subnet but provide access to
     1. Data warehouse for large volumes of aggregated data
 5. Amazon ElastiCache
     1. Fast temporary storage for small amounts of data
-7. 
 
+### Amazon Relational Database Service (Amazon RDS)
+1. Amazon Relational Database Service (Amazon RDS) is a managed service that makes it easy to set up, operate and scale a relational database in the cloud.
+2. Amazon RDS uses EC2 instances, so you must choose an instance family/type
+3. Relational databases are known as Structured Query Language (SQL) databases
+4. Amazon RDS is an Online Transaction Processing (OLTP) type of database
+5. Easy to setup, highly available, fault tolerant, and scalable
+6. Common use cases include online stores and banking systems
+7. You can encrypt your Amazon RDS instances and snapshots at rest by enabling the encryption option for your Amazon RDS DB instance
+8. Encryption uses AWS Key Management Service (Amazon KMS)
+
+### Amazon RDS supports the following database engines
+1. Microsoft SQL Server
+2. Oracle
+3. MySQL Server
+4. PostgreSQL
+5. Aurora
+6. MariaDB
+
+### Amazon RDS Facts:
+1. Amazon RDS can only be scaled by increasing instance size (compute and storage)
+2. Fault tolerance/disaster recovery with Multi-AZ option
+3. Automatic failover for Multi-AZ option
+4. Read replicas option for read heavy workloads
+
+### Amazon DynamoDB Facts:
+1. Fully managed NoSQL database service that provides fast and predictable performance with seamless scalability
+2. Push button scaling means that you can scale the DB at any time without incurring downtime
+3. Data is synchronously replicated across 3 facilities (AZs) in a region
+4. Amazon DynamoDB global tables provide a fully managed solution for deploying a mult-region, mult-master database
+5. Amazon DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for DynamoDB that delivers up to a 10x performance improvement
+
+### Amazon Redshift Facts:
+1. Amazon Redshift is a fast, fully managed data warehouse that makes it simple and cost-effective to analyze all your data using standard SQL and existing Business Intelligence (BI) tools
+2. RedShift is a SQL based data warehouse used for analytics applications
+3. RedShift is a relational database that is used for Online Analytics Processing (OLAP) use cases
+4. RedShift is ideal for processing large amounts of data for business intelligence
+5. RedShift uses Amazon EC2 instances, so you must choose an instance family/type
+6. RedShift uses columnar data storage
+7. RedShift always keeps 3 copies of your data
+8. RedShift provides continuous/incremental backups
+
+### ElastiCache Facts:
+1. ElastiCache is a web service that makes it easy to deploy and run Memcached or Redis protocol-compliant server nodes in the cloud
+2. The in-memory caching provided by ElastiCache can be used to significantly improve latency and throughput for many read-heavy application workloads or compute-intensive workloads
+3. ElastiCache nodes run on Amazon EC2 instances, so you must choose your instance family/type
+
+### ElastiCache Use Cases:
+1. Web Session Store - in cases with load-balanced web servers, store web session information in Redis so if a server is lost, the session information is not lost and another web server can pick it up
+2. Database Caching - use Memcached in front of AWS RDS to cache popular queries to offload work from RDS and return faster results to users
+3. Leaderboards - use Redis to provide a live leaderboard for millions of users of your mobile app
+4. Streaming data dashboards - provide a landing spot for streaming sensor data on the factory floor, providing live real-time dashboard displays
+
+### 2 Types of ElastiCache Engines:
+1. Memcached - simplest model, can run large nodes with multiple cores/threads, can be scaled in and out, can cache objects such as DBs
+2. Redis - complex model, supports encryption, master/slave replication, cross AZ(HA), automatic failover and backup/restore
