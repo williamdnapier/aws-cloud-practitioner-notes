@@ -448,3 +448,54 @@ When you need to place an EC2 instance in a private subnet but provide access to
 ### 2 Types of ElastiCache Engines:
 1. Memcached - simplest model, can run large nodes with multiple cores/threads, can be scaled in and out, can cache objects such as DBs
 2. Redis - complex model, supports encryption, master/slave replication, cross AZ(HA), automatic failover and backup/restore
+
+### Elastic Load Balancing (ELB) Types:
+1. Application Load Balancer
+    1. Instance Protocol: HTTP, HTTPS
+    2. Load Balancer Protocol: HTTP, HTTPS
+2. Network Load Balancer
+    1. Instance Protocol: TCP, TCP_UDP
+    2. Load Balancer Protocol: TCP, TLS, UDP, TCP_UDP
+3. Classic Load Balancer
+    1. Instance Protocol: TCP, SSL, HTTP, HTTPS
+    2. Load Balancer Protocol: TCP, SSL, HTTP, HTTPS
+    
+### Elastic Load Balancer (ELB) - Application Load Balancer
+1. Operates at the request level
+2. Routes based on the content of the request (layer 7)
+3. Supports path-based routing, host-based routing, query string parameter-based routing, and source IP address-based routing
+4. Supports IP addresses, Lambda Functions and containers as targets
+
+### Elastic Load Balancer (ELB) - Network Load Balancer
+1. Operates at the connection level
+2. Routes connections based on IP protocol data (layer 4)
+3. Offers ultra high performance, low latency and TLS offloading at scale
+4. Can have static IP/Elastic IP
+5. Supports UDP and static IP addresses as targets
+
+### Elastic Load Balancer (ELB) - Classic Load Balancer
+1. Old generation; not recommended for new applications
+2. Performs routing at layer 4 and layer 7
+3. Use for existing applications running in EC2-Classic
+
+### Elastic Load Balancer (ELB) Facts:
+1. ELB automatically distributes incoming application traffic across multiple targets, such as Amazon ECS instances, containers and IP addresses
+2. ELB can handle the varying load of your application traffic in a single Availability Zone or across multiple Availability Zones
+3. ELB features high availability, automatic scaling, and robust security necessary to make your applications fault tolerant
+
+### 3 Types of Elastic Load Balancer (ELB) on AWS:
+1. Application Load Balancer (ALB) - layer 7 balancer that routes connections based on the content of the request
+2. Network Load Balancer (NLB) - layer 4 load balancer that routes connections based on IP protocol data
+3. Classic Load Balancer (CLB) - this is the oldest of the 3 and provides basic load balancing at both layer 4 and layer 7
+
+### Amazon EC2 Auto Scaling
+1. Amazon EC2 Auto Scaling provides horizontal scaling
+2. Auto Scaling provides elasticity and scalability
+3. AWS Auto Scaling automates the process of adding (scaling up) OR removing (scaling down) EC2 instances based on the traffic demand of your application
+4. Auto Scaling helps to ensure that you have the correct number of EC2 instances available to handle the application load
+5. You create collections of EC2 instances, called Auto Scaling Group (ASG)
+6. You can specify the minimum number of instances in each ASG, and AWS Auto Scaling will ensure the group never goes beneath this size
+7. You can also specify the maximum number of instances in each ASG and the group will never go above this size
+8. A desired capacity can be configured and AWS Auto Scaling will ensure the group has this number of instances
+
+
