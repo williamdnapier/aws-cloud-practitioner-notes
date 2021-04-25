@@ -498,4 +498,37 @@ When you need to place an EC2 instance in a private subnet but provide access to
 7. You can also specify the maximum number of instances in each ASG and the group will never go above this size
 8. A desired capacity can be configured and AWS Auto Scaling will ensure the group has this number of instances
 
+### Amazon Route 53
+1. Amazon Route 53 is the AWS Domain Name Service
+2. Amazon Route 53 is a Global Service
+3. Amazon Route 53 performs 3 main functions:
+    1. Domain Registration - Amazon Route 53 allows you to register domain names
+    2. Domain Name Service (DNS) - Amazon Route 53 translates name to IP addresses using a global network of authoritative DNS servers
+    3. Health Checking - Amazon Route 53 sends automated requests to your application to verify that it's reachable, available and functional
+4. DNS failover (automatically change domain endpoint if system fails)
+5. Integrates with Amazon Elastic Load Balancer (ELB), Amazon Simple Storage Service (S3) and CloudFront as endpoints
+6. Routing policies determine how Amazon Route 53 DNS responds to queries
+
+### Amazon CloudFront
+1. CloudFront is a content delivery network (CDN) that allows you to store (cache) your content at "edge locations" located around the world
+2. This allows customers to access content more quickly and provides security against DDoS attacks
+3. CloudFront can be used for data, videos, applications and APIs
+4. CloudFront Benefits:
+    1. Cache content at Edge Location for fast distribution to customers
+    2. Built-in Distributed Denial of Service (DDoS) attack protection
+    3. Integrates with many AWS services (S3, EC2, ELB, Route 53, Lambda)
+
+### Amazon CloudFront - Origins and Distributions:
+1. An origin is the origin of the files that the CDN will distribute
+2. Origins can be either an S3 bucket, an EC2 instance, an Elastic Load Balancer, or Amazon Route 53 - can also be external (non-AWS)
+3. To distribute content with CloudFront you need to create a distribution
+4. There are 2 types of distribution:
+    1. Web Distribution
+    2. RTMP Distribution
+5. CloudFront uses Edge Locations and Regional Edge Caches
+    1. An edge location is the location where content is cached (separate to AWS regions/AZs)
+    2. Requests are automatically routed to the nearest edge location
+    3. Regional Edge Caches are located between origin web servers and global edge locations and have a larger cache
+    4. Regional Edge caches aim to get content closer to users
+    
 
