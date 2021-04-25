@@ -554,4 +554,31 @@ When you need to place an EC2 instance in a private subnet but provide access to
     3. Command Line Tools
     4. Higher-level AWS services (such as CloudFormation)
     
+### AWS CloudFormation
+1. AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment
+2. CloudFormation can be used to provision a broad range of AWS resources
+3. Think of CloudFormation as deploying infrastructure as code
+4. Elastic Beanstalk is more focused on deploying applications on EC2 (PaaS)
+
+### AWS Elastic Beanstalk
+1. AWS Elastic Beanstalk can be used to quickly deploy and manage applications in the AWS Cloud
+2. Developers upload applications and Elastic Beanstalk handles the deployment details of capacity provisioning, load balancing, auto-scaling, and application health monitoring
+3. Considered as a Platform as a Service (PaaS) solution
+
+### CloudFormation Facts:
+1. Template-driven provisioning
+2. Deploys infrastructure using code
+3. Uses JSON or YAML template files
+4. CloudFormation can deploy Elastic Beanstalk enrollments
+5. Similar to Terraform
+
+### Elastic Beanstalk Facts:
+1. Web apps made easy
+2. Deploys applications on EC2 (PaaS)
+3. Deploys web applications based on Java, .NET, PHP, Node, Python, Ruby, Go and Docker
+4. Uses ZIP or WAR files or Git
+5. Elastic Beanstalk cannot deploy using CloudFormation
+6. Similar to Google App Engine
+
+    
 
