@@ -580,5 +580,8 @@ When you need to place an EC2 instance in a private subnet but provide access to
 5. Elastic Beanstalk cannot deploy using CloudFormation
 6. Similar to Google App Engine
 
+### AWS Pricing Facts:
+1. What you get for free vs. what you are charged forCloudFormation
+
     
 
