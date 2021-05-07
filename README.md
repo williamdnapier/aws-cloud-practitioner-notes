@@ -2,6 +2,14 @@
 
 ## Brief Notes for AWS CPP
 
+## Section 3: Cloud Computing and AWS
+
+### Legacy IT
+In Legacy IT, you had a corporate data center which contained it's own servers, storage servers, routers, switches, firewalls and backup systems. A company would either lease this space (co-location) or might own the entire building. Regardless if the company owns the building or not, they do own the equipment in this model. This model is very capital intensive -- you have to purchase all this equipment prior to operation. The company's corporate office is connected into this datacenter and the IT staff would have to design, build, operate and manage equipment. So, this leads to alot of cost. These costs include: data center building, data center security, physical IT hardware, software licensing costs, maintenance contracts, power, internet connectivity, staff wages (design, build, operations and maintenance).
+
+### Examples of Cloud Computing
+Some examples of cloud computing include: Gmail, Salesforce, Dropbox, AWS. So, what defines a cloud service? Well, the service can be described with the following terms: on-demand, self-service, broad network access (provided by internet access), with resources pooling. Resource pooling means that the provider is able to leverage a large number of compute resources to share for the actual delivery of the service. These services are known to have rapid elasticty. Rapid elasticity means that your services can grow very quickly as demand goes up and also shrink very quickly as demand decreases for those services. With cloud computing you typically are paying on a pay-per-use basis -- depending on your contract you usually would be using a pay as you go model.
+
 ### 6 Advantages of Cloud Computing
 1. Trade capital expense for variable expense
 2. Benefit from massive economies of scale
