@@ -37,8 +37,14 @@ Total Time: 3-6 months
 
 Much faster because you don't have to purchase and install servers. This can be faster and much cheaper because you don't have the same sort of capital expenses -- you are only paying for on-demand (aka what is used).
 
+### Cloud Service Models
+1. Private cloud - is a cloud environment owned and managed by you. It includes the servers, hypervisors, applications in the stack. It can have self-service, multi-tenancy, metering and elasticity but it is managed by you. It is much easier to use public cloud services like AWS than to try to do this yourself. A private cloud is like owning a home where you are responsible for taking care of everything.
 
+2. Infrastructure as a Service (IaaS) - you manage the VM, the OS running on the VM and the applications which run on the VM. Some examples of IaaS include: Amazon Elastic Compute Cloud (EC2), Azure Virtual Machines, Google Compute Engine. IaaS is different than home ownership (aka private cloud). It is more like renting a room or rooms at a hotel. You get the structure that you need for only the time which it is needed but you have to see to it once in the room.
 
+3. Platform as a Service (PaaS) - you only manage the applications and databases on the VM. In this model you are only uploading data and managing code. You don't have to worry about anything else in this model. Examples: AWS Elastic Beanstalk, Azure WebApps and Google Compute App Engine.
+
+4. Software as a Service (SaaS) - you don't manage anything, you only use the software. Examples: Salesforce, Google Apps, Zoom, etc.
 
 ### 6 Advantages of Cloud Computing
 1. Trade capital expense for variable expense
