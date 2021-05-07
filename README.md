@@ -10,6 +10,36 @@ In Legacy IT, you had a corporate data center which contained it's own servers, 
 ### Examples of Cloud Computing
 Some examples of cloud computing include: Gmail, Salesforce, Dropbox, AWS. So, what defines a cloud service? Well, the service can be described with the following terms: on-demand, self-service, broad network access (provided by internet access), with resources pooling. Resource pooling means that the provider is able to leverage a large number of compute resources to share for the actual delivery of the service. These services are known to have rapid elasticty. Rapid elasticity means that your services can grow very quickly as demand goes up and also shrink very quickly as demand decreases for those services. With cloud computing you typically are paying on a pay-per-use basis -- depending on your contract you usually would be using a pay as you go model.
 
+### Cloud vs Traditional IT
+Cloud Computing: on-demand, self-service, with broad network access, resource pooling (always enough capacity to meet your needs), rapid elasticity, measured service.
+
+Traditional IT: requires human involvement, with internal network access and limited public presence (have to setup a remote way to access the resources), single-tenant hardware (can be virtualized) - only your company using the hardware, limited in terms of scaling, usage not typically measured and not charged back to the department responsible for application.
+
+### Examples of Cloud Computing
+
+| Non-Cloud Services | Cloud Services |
+| ------------------ | -------------- |
+| Email server       | Gmail          |
+| File server        | Dropbox        |
+| CRM (Customer Relationship Manager) | Salesforce       |
+
+With cloud services you don't own or manage the infrastructure on which the service runs. Cloud services are offered on a subscription / consumption model. The service will scale as demand changes.
+
+### Example of Deploying a Website On-Premise (Traditional IT Model)
+1. Purchase hardware (4-12 weeks)
+2. Install and build (4-8 weeks)
+3. UAT (2-4 weeks)
+4. Handover to Operations (1-2 weeks)
+Total Time: 3-6 months
+
+### Example of Deploying a Website in the Cloud
+1. Admin uses browser to deploy website to AWS Cloud
+
+Much faster because you don't have to purchase and install servers. This can be faster and much cheaper because you don't have the same sort of capital expenses -- you are only paying for on-demand (aka what is used).
+
+
+
+
 ### 6 Advantages of Cloud Computing
 1. Trade capital expense for variable expense
 2. Benefit from massive economies of scale
