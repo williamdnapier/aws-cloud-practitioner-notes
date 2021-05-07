@@ -46,6 +46,16 @@ Much faster because you don't have to purchase and install servers. This can be 
 
 4. Software as a Service (SaaS) - you don't manage anything, you only use the software. Examples: Salesforce, Google Apps, Zoom, etc.
 
+### Cloud Delivery Models
+
+1. Private Cloud - you build your own infrastructure including: virtualization cluster, storage & backup, network and firewall. Then, you layer on top of this your self-service portal, automation and configuration management, billing and reporting and multi-tenancy controller. This private cloud is not shared with any other company, so it is called single tenancy. Benefits include: complete control of the entire stack, security - in some cases organizations have to keep all of their applications in-house due to compliance reasons. Examples of private clouds include: VMware, Microsoft, RedHat and OpenStack.
+
+2. Public Cloud - you are connected from Corporate Office to AWS Cloud via the Internet or a Private Link. Public cloud services in AWS Cloud would include compute, storage, network and database. Benefits: variable expenses (instead of capital expense), economies of scale, massive elasticity. Examples: AWS, Microsoft Azure, Google Cloud Platform.
+
+3. Hybrid Cloud - Private Cloud connected to Public Cloud via the Internet or a Private Link. Benefits: allows companies to keep the critical applications and sensitive data in a traditional data center environment or private cloud, take advantage of public cloud resources like SaaS (latest applications) and IaaS (elastic virtual resources), facilitates portability of data, apps and services and more choices for deployment models. So, you can fail over in the cloud or burst into the cloud when needed using this model.
+
+4. Multicloud - this is where you are taking advantage of multiple cloud providers (AWS, Azure, VMware, OpenStack). So, you are getting the best of each of these providers. This allows you to put your applications where they are best suited. 
+
 ### 6 Advantages of Cloud Computing
 1. Trade capital expense for variable expense
 2. Benefit from massive economies of scale
