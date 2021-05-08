@@ -119,6 +119,28 @@ Service Control Policies (SCPs) are a feature of AWS Organizations. Service Cont
 15. Use policy conditions for extra security (for example, restrict to certain IP addresses, etc.)
 16. Monitor activity in your AWS account - watch for anything suspicious
 
+## Section 5: AWS Compute Services
+
+### AWS Compute Services Summary
+Amazon Elastic Cloud Computing (EC2) is a web service with which you can run virtual servers (instances) in the cloud. These EC2 instances can run the Windows, Linux or MacOS operating systems. An Amazon Machine Image (AMI) is used to launch an EC2 instance which consists of an EB2 snapshot, permissions and configuration.
+
+Amazon EC2 Metadata and User Data - user data is data that is supplied by the user at instance launch in the form of a script. Whereas instance metadata is data about your instance that you can use to configure or manage the running instance. User data and metadata are NOT encrypted. You can find metadata about the instance at http://169.254.169.254/latest/meta-data and do curl requests to get information about this metadata.
+
+Access keys can be used on EC2 instances to gain permissions to other AWS Services. Remember, these are credentials which are associated with your account and can be used to authenticate with. They are actually stored in plain text on the hard drive of the EC2 instance ... so, they are NOT secure and should NOT be used if possible. It is better to delegate a role to the EC2 instance for work it needs to do rather than access keys because of this security concern.
+
+AWS Batch is a service which enables developers to easily run thousands of batch computing jobs on AWS. It can use a large amount of processing power and AWS Batch will coordinate all the services necessary to run these scripts. AWS Batch dynamically provisions the optimal quantity and type of compute resources.
+
+Amazon Lightsail is a service for less technical users. It does not require deep technical knowledge of AWS to provision compute services. Amazon Lightsail provides compute, storage and networking capacity to deploy and manage websites, web applications and databases in the cloud. Best suited to smaller projects which only require maybe a dozen or less instances. It is lower cost than EC2 but you do not get the same features as EC2 in terms of scalability and level of control. Provides a simple UI and is ideal for blogs, simple websites and web applications (e-commerce web sites). You can deploy load balancers and attach block storage to Amazon Lightsail instances.
+
+Amazon Elastic Container Service (ECS) is used to run containers in the cloud. In ECS, containers are called tasks. ECS Tasks are defined by Task Definitions.
+There are (2) ECS Launch Types: 
+1. EC2 Launch Type - in this type you manage the EC2 instances which are the hosts for ECS tasks running inside of the ECS cluster
+2. Fargate Launch Type - in this type, AWS manages the underlying compute, cluster and scaling
+
+Amazon ECS Registry (ECR) is a private container registry where you can keep your images for your Docker containers. 
+
+
+
 
 
 ### Payment Models
