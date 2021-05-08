@@ -47,7 +47,6 @@ Much faster because you don't have to purchase and install servers. This can be 
 4. Software as a Service (SaaS) - you don't manage anything, you only use the software. Examples: Salesforce, Google Apps, Zoom, etc.
 
 ### Cloud Delivery Models
-
 1. Private Cloud - you build your own infrastructure including: virtualization cluster, storage & backup, network and firewall. Then, you layer on top of this your self-service portal, automation and configuration management, billing and reporting and multi-tenancy controller. This private cloud is not shared with any other company, so it is called single tenancy. Benefits include: complete control of the entire stack, security - in some cases organizations have to keep all of their applications in-house due to compliance reasons. Examples of private clouds include: VMware, Microsoft, RedHat and OpenStack.
 
 2. Public Cloud - you are connected from Corporate Office to AWS Cloud via the Internet or a Private Link. Public cloud services in AWS Cloud would include compute, storage, network and database. Benefits: variable expenses (instead of capital expense), economies of scale, massive elasticity. Examples: AWS, Microsoft Azure, Google Cloud Platform.
@@ -56,15 +55,17 @@ Much faster because you don't have to purchase and install servers. This can be 
 
 4. Multicloud - this is where you are taking advantage of multiple cloud providers (AWS, Azure, VMware, OpenStack). So, you are getting the best of each of these providers. This allows you to put your applications where they are best suited. 
 
-### 6 Advantages of Cloud Computing
-1. Trade capital expense for variable expense
-2. Benefit from massive economies of scale
-3. Stop guessing capacity
-4. Increase speed and agility
-5. Stop spending money on running and maintaining data centers
-6. Go global in minutes
+### Overview of AWS
+Amazon recognized different amount of infrastructure was required at different times in the year. During the Christmas season there is an increased demand for infrastructure whereas during mid-February that infrastructure was just sitting there idle. AWS solves this problem for their customers. AWS attributes: a subsidiary of Amazon, a hyperscale public cloud provider, services are offered on-demand, 25 regions around the world, charge for services based on usage.
 
-### AWS Cloud Overview
+AWS Service Categories include machine learning, media services, networking, end user computing, internet of things, analytics, database, storage and compute services. There are many categories and more than 200 services.
+
+AWS charges based on (3) things:
+1. Compute - amount of resources such as CPU, RAM and duration
+2. Storage - quantity of data stored
+3. Outbound Data Transfer - quantity of data that is transferred out from all services
+
+### AWS Cloud Overview Summary
 1. AWS Region is a geographical area
 2. Each region consists of 2 or more Availability Zones (AZs)
 3. Each region is designed to be completely isolated from the other regions
@@ -74,10 +75,51 @@ Much faster because you don't have to purchase and install servers. This can be 
 7. Each Availability Zone is designed to be an independent failure zone
 8. Availability Zones are physically separated within a typical metro region and use different power sources
 
-### 3 Fundamentals of AWS Pricing
-1. Compute
-2. Storage
-3. Outbound Data Transfer
+### AWS Global Infrastructure
+The AWS Global Infrastructure is comprised of the 25 regions and contained availability zones. A region is a physical location in the world and is independent. Every region is connected via a high bandwidth, fully redundant network. There are 25 regions around the world. Each region consists of 2 or more availability zones. An availability zone is composed of one or more data centers. Between the region and the user is the AWS Local Zone. A local zone extend regions closer to end users.
+
+Deploying services globally - with the AWS Management Console you can launch virtal servers (instances) and databases globally.
+
+### 6 Advantages of Cloud Computing
+1. Trade capital expense (CAPEX) for variable expense (OPEX)
+2. Benefit from massive economies of scale
+3. Stop guessing capacity
+4. Increase speed and agility
+5. Stop spending money on running and maintaining data centers
+6. Go global in minutes
+
+## Section 4: Identity and Access Management (AWS IAM)
+
+### IAM Summary
+AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. You use it to control who is authenticated (signed in) and who is authorized (has permissions) to use resources.
+
+Users are the individual accounts which a human logs in with. Users have NO PERMISSIONS by default. Groups are used for organizing users and applying policies to users in those groups. Policies are JSOn documents used for defining permissions which are applied to groups. Roles are used as delegates and are used, as needed, by services.
+
+Users log into the AWS Management Console with a username and password. While access keys are used for CLI and API programmatic use. Access keys consist of an access key ID and a secret access key. The Root User is the use that created the AWS account. Root users have full permissions and cannot be restricted.
+
+Multi-factor authentication (MFA) uses something only you know (password) with something you have (physical device or virtual pin) and should be applied to all users.
+
+Service Control Policies (SCPs) are a feature of AWS Organizations. Service Control Policies control the maximum available permissions in an AWS account. SCPs do NOT actually grant permissions but rather they just define what is allowed.
+
+### IAM Best Practices
+1. Lock away your AWS account root user access keys
+2. Create individual IAM users (do not share accounts between users)
+3. Use groups to assign permissions to IAM users
+4. Grant the least privilege possible for users to do their job
+5. Get started using permissions with AWS managed policies (use these if inexperienced writing policies)
+6. Use custom managed policies (apply to groups or roles) instead of inline policies (apply direcly to individual user)
+7. Use access levels to review IAM permissions (This means constantly review the permissions assigned to users. Ensure they only have those permissions needed to do their job.)
+8. Configure a strong password policy for your users (Upper, lower cases, digits, special characters, length, etc.)
+9. Enable MFA
+10. Use roles for applications that run on Amazon EC2 instances (don't put access keys in code)
+11. Use roles to delegate permissions
+12. Do NOT share access keys
+13. Rotate credentials regularly (i.e. weekly, monthly, quarterly, etc. - done with password policy)
+14. Remove unneeded credentials (remove old user accounts, access keys, etc.)
+15. Use policy conditions for extra security (for example, restrict to certain IP addresses, etc.)
+16. Monitor activity in your AWS account - watch for anything suspicious
+
+
 
 ### Payment Models
 1. On-Demand. Used for compute and database capacity. No long-term commitments or upfront payments.
