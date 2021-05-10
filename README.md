@@ -139,3 +139,15 @@ There are (2) ECS Launch Types:
 
 Amazon ECS Registry (ECR) is a private container registry where you can keep your images for your Docker containers. 
 
+
+## Section 6: AWS Storage Services Summary
+
+### Amazon Elastic Block Store (EBS) Facts
+An EBS volume data persists independently of the life of the instance. EBS volumes do not need to be attached to an instance. You can attach multiple EBS volumes to 1 EC2 instance. There is also a mult-attach option to attach a volume to multiple instances but with some constraints. EBS volumes must be in the same Availability Zone (AZ) which they are attached to. Root EBS volumes are deleted on termination by default. Whereas extra non-boot volumes are not deleted on termination by default. Snapshots capture a point-in-time state of an instance. Snapshots are stored on S3. If you make periodic snapshots of a volume, the snapshots are incremental. While EBS volumes are AZ-specific, snapshots are region-specific because they are stored on Amazon S3.
+
+Data Lifecycle Manager (DLM) - automates the creation, retention and deletion of EBS snapshots and EBS-backed AMIs (Amazon Machine Images). DLM helps with the following: it protects valuable data by enforcing a regular backup schedule, it can create standardized AMIs that can be refreshed at regular intervals, it can also be used to retain backups as required by auditors or for internal compliance reasons. DLM can reduce storage costs by deleting outdated backups. You can use DLM to create a Diaster Recovery (DR) backup policy that backs up data to isolated accounts.
+
+Instance Store Volumes - are high performance local disks that are physically attached to to the host computer on which an EC2 instance runs. Instance stores are ephemeral which means the data is lost when powered off (non-persistent). They are ideal for temporary storage of information that changes frequently (buffers, caches or scratch data).
+
+### Amazon Elastic File System (EFS) Facts
+Amazon Elastic File System (EFS) is a file-based storage system. It uses the NFS protocol so is only for Linux (no Windows). You can connect many EC2 instances concurrently to 1 EFS. You can connect to EFS from other VPCs.
