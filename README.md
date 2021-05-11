@@ -151,3 +151,22 @@ Instance Store Volumes - are high performance local disks that are physically at
 
 ### Amazon Elastic File System (EFS) Facts
 Amazon Elastic File System (EFS) is a file-based storage system. It uses the NFS protocol so is only for Linux (no Windows). You can connect many EC2 instances concurrently to 1 EFS. You can connect to EFS from other VPCs.
+
+### AWS Simple Storage Service (S3) Facts
+Amazon Simple Storage Service (Amazon S3) - you can store any type of file in S3, files can be anywhere from 0 bytes to 5 TB in size in this object-based storage system. There is unlimited storage available. S3 has a universal namespace because files can have public URLs; so bucke names must be globally unique. However, the bucket which you create must exist in a particual region. So, it is a best practice to choose the regions which are closest to users to reduce latency.
+
+Amazon Simple Storage Service (S3) Classes
+1. S3 Standard - durable, immediately available, frequently accessed
+2. S3 Intelligent-Tiering - automatically moves data to the most cost-effective tier
+3. S3 Standard-IA - durable, immediatedly available, infrequently accessed. Lower cost for storage but additional cost to retrieve data.
+4. S3 1 Zone-IA - lower cost for infrequently accessed data with less resilience (less durable)
+5. S3 Glacier - archived data, retrieval times in minutes or hours
+6. S3 Glacier Deep Archive - lowest cost storage class for long term retention
+
+Additional S3 Features
+1. Transfer acceleration - speeds up uploads using CloudFront
+2. Requester pays - the account requesting the object pays
+3. Events - can trigger notifications to SNS, SQS and Lambda
+4. Static website hosting - setup a simple, static website
+5. Encryption - encrypt objects in the bucket
+6. Replication - replicate within a region (SRR) or across regions (CRR)
